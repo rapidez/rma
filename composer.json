@@ -1,16 +1,16 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "rapidez/rma",
+    "description": "MageOS_RMA compatibility",
     "keywords": [
         "rapidez",
-        ":package_slug"
+        "rma"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/rapidez/rma",
     "license": "GPL-3.0-or-later",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Roy Duineveld",
+            "email": "royduineveld@gmail.com",
             "role": "Developer"
         }
     ],
@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src"
+            "Rapidez\\RMA\\": "src"
         }
     },
     "config": {
@@ -34,7 +34,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
+                "Rapidez\\RMA\\RMAServiceProvider"
             ]
         }
     },
