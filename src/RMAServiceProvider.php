@@ -8,7 +8,7 @@ class RMAServiceProvider extends ServiceProvider
 {
     public function register()
     {
-        $this->mergeConfigFrom(__DIR__.'/../config/rapidez/rma.php', 'rapidez.rma');
+        $this->mergeConfigFrom(__DIR__ . '/../config/rapidez/rma.php', 'rapidez.rma');
     }
 
     public function boot()
@@ -20,35 +20,35 @@ class RMAServiceProvider extends ServiceProvider
             ->bootFilters();
     }
 
-    public function bootRoutes() : self
+    public function bootRoutes(): self
     {
-        $this->loadRoutesFrom(__DIR__.'/../routes/api.php');
-        $this->loadRoutesFrom(__DIR__.'/../routes/web.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/api.php');
+        $this->loadRoutesFrom(__DIR__ . '/../routes/web.php');
 
         return $this;
     }
 
-    public function bootViews() : self
+    public function bootViews(): self
     {
-        $this->loadViewsFrom(__DIR__.'/../resources/views', 'rapidez-rma');
+        $this->loadViewsFrom(__DIR__ . '/../resources/views', 'rapidez-rma');
 
         return $this;
     }
 
-    public function bootPublishables() : self
+    public function bootPublishables(): self
     {
         $this->publishes([
-            __DIR__.'/../resources/views' => resource_path('views/vendor/rapidez-rma'),
+            __DIR__ . '/../resources/views' => resource_path('views/vendor/rapidez-rma'),
         ], 'rapidez-rma-views');
 
         $this->publishes([
-            __DIR__.'/../config/rapidez/rma.php' => config_path('rapidez/rma.php'),
+            __DIR__ . '/../config/rapidez/rma.php' => config_path('rapidez/rma.php'),
         ], 'rapidez-rma-config');
 
         return $this;
     }
 
-    public function bootFilters() : self
+    public function bootFilters(): self
     {
         Eventy::addFilter('index.product.data', function ($data) {
             // Manipulate the data
