@@ -16,8 +16,7 @@ class RMAServiceProvider extends ServiceProvider
         $this
             ->bootRoutes()
             ->bootViews()
-            ->bootPublishables()
-            ->bootFilters();
+            ->bootPublishables();
     }
 
     public function bootRoutes() : self
@@ -46,19 +45,5 @@ class RMAServiceProvider extends ServiceProvider
         ], 'rapidez-rma-config');
 
         return $this;
-    }
-
-    public function bootFilters() : self
-    {
-        Eventy::addFilter('index.product.data', function ($data) {
-            // Manipulate the data
-            return $data;
-        });
-
-        Eventy::addFilter('index.product.mapping', fn ($mapping) => array_merge_recursive($mapping ?: [], [
-            'properties' => [
-                // Additional mappings
-            ],
-        ]));
     }
 }
